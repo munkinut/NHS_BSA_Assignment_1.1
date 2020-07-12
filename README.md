@@ -8,7 +8,7 @@
 
 Set up IntelliJ with maven
 
-Plan
+Play
 
 Design
 
