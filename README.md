@@ -16,9 +16,8 @@ Develop
  - Code
  - Run Tests
  - Iterate
+ - Increment
  
-Document
-
 Release
     
 **POINTS TO THINK ABOUT**
