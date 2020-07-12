@@ -10,9 +10,8 @@ Set up IntelliJ with maven
 
 Play
 
-Design
-
 Develop
+ - Design
  - Write Tests
  - Code
  - Run Tests
