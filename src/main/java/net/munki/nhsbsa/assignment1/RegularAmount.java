@@ -16,6 +16,7 @@ public class RegularAmount {
         return amount;
     }
 
+    @CheckRegularAmount
     public void setAmount(String amount) {
         this.amount = amount;
     }
