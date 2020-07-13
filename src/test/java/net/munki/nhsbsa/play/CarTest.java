@@ -61,6 +61,21 @@ public class CarTest {
     }
 
     @Test
+    public void licencePlateIsInvalid() {
+        Car car = new Car( "Morris", "dd-ab-123", 2 );
+
+        Set<ConstraintViolation<Car>> constraintViolations =
+                validator.validate( car );
+
+        assertEquals( 1, constraintViolations.size() );
+        assertEquals(
+                "Case mode must be UPPER.",
+                constraintViolations.iterator().next().getMessage()
+        );
+    }
+
+
+    @Test
     public void carIsValid() {
         Car car = new Car( "Morris", "DD-AB-123", 2 );
 
@@ -69,4 +84,5 @@ public class CarTest {
 
         assertEquals( 0, constraintViolations.size() );
     }
+
 }
