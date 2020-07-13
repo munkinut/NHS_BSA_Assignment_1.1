@@ -1,5 +1,6 @@
 package net.munki.nhsbsa.assignment1;
 
+@CheckRegularAmount
 public class RegularAmount {
     private Frequency frequency;
     private String amount;
@@ -16,7 +17,6 @@ public class RegularAmount {
         return amount;
     }
 
-    @CheckRegularAmount
     public void setAmount(String amount) {
         this.amount = amount;
     }

@@ -29,7 +29,7 @@ public class RegularAmountTest {
                 validator.validate( ra );
 
         assertEquals( 1, constraintViolations.size() );
-        assertEquals( "must not be null", constraintViolations.iterator().next().getMessage() );
+        assertEquals( "Regular Amount is invalid.", constraintViolations.iterator().next().getMessage() );
     }
 
 }
