@@ -22,14 +22,65 @@ public class RegularAmountTest {
     }
 
     @Test
-    public void regularAmountIsInvalid() {
+    public void amountNonNumeric() {
         RegularAmount ra = new RegularAmount();
-
+        ra.setFrequency(Frequency.WEEK);
+        ra.setAmount("abcd");
         Set<ConstraintViolation<RegularAmount>> constraintViolations =
                 validator.validate( ra );
+        assertEquals( 0, constraintViolations.size() );
+    }
 
+    @Test
+    public void amountBlank() {
+        RegularAmount ra = new RegularAmount();
+        ra.setFrequency(Frequency.WEEK);
+        ra.setAmount("");
+        Set<ConstraintViolation<RegularAmount>> constraintViolations =
+                validator.validate( ra );
+        assertEquals( 0, constraintViolations.size() );
+    }
+
+    @Test
+    public void frequencyWeek() {
+        RegularAmount ra = new RegularAmount();
+        ra.setFrequency(Frequency.WEEK);
+        ra.setAmount("1000");
+        Set<ConstraintViolation<RegularAmount>> constraintViolations =
+                validator.validate( ra );
+        assertEquals( 0, constraintViolations.size() );
+    }
+
+    @Test
+    public void frequencyMonth() {
+        RegularAmount ra = new RegularAmount();
+        ra.setFrequency(Frequency.MONTH);
+        ra.setAmount("1000");
+        Set<ConstraintViolation<RegularAmount>> constraintViolations =
+                validator.validate( ra );
+        assertEquals( 0, constraintViolations.size() );
+    }
+
+    @Test
+    public void amountValid() {
+        RegularAmount ra = new RegularAmount();
+        ra.setFrequency(Frequency.TWO_WEEK);
+        ra.setAmount("1000");
+        Set<ConstraintViolation<RegularAmount>> constraintViolations =
+                validator.validate( ra );
+        assertEquals( 0, constraintViolations.size() );
+    }
+
+    @Test
+    public void amountInvalid() {
+        RegularAmount ra = new RegularAmount();
+        ra.setFrequency(Frequency.QUARTER);
+        ra.setAmount("1003");
+        Set<ConstraintViolation<RegularAmount>> constraintViolations =
+                validator.validate( ra );
         assertEquals( 1, constraintViolations.size() );
         assertEquals( "Regular Amount is invalid.", constraintViolations.iterator().next().getMessage() );
     }
+
 
 }
