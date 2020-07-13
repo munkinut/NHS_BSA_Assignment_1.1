@@ -16,6 +16,7 @@ public class CheckRegularAmountValidator implements ConstraintValidator<CheckReg
       Frequency frequency = regularAmount.getFrequency();
       long pence;
 
+      // If amount is blank or non-numeric, return valid
       try {
          pence = Integer.parseInt(amount) * 100;
       }
@@ -23,6 +24,7 @@ public class CheckRegularAmountValidator implements ConstraintValidator<CheckReg
          return true;
       }
 
+      // If frequency is null, WEEK or MONTH, return valid
       if (    frequency == null ||
               frequency.equals(Frequency.WEEK) ||
               frequency.equals(Frequency.MONTH)
@@ -30,6 +32,7 @@ public class CheckRegularAmountValidator implements ConstraintValidator<CheckReg
 
       int weeks = 0;
 
+      // Ensure enum keys refer to numerics for weeks
       switch (frequency) {
          case TWO_WEEK:
             weeks = 2;
@@ -47,6 +50,7 @@ public class CheckRegularAmountValidator implements ConstraintValidator<CheckReg
       return isValidPence(weeks, pence);
    }
 
+   // Simple mod operation to determine if pence is valid
    private boolean isValidPence(int weeks, long pence) {
       return (pence % weeks == 0);
    }
