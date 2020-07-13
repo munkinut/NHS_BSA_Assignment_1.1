@@ -18,6 +18,8 @@ Set up IntelliJ with maven
 
 Set up GitHub Project
 
+Create and checkout 0.1-devel branch
+
 Develop
  - Play
  - Design
@@ -27,8 +29,10 @@ Develop
  - Iterate
  - Increment
  
-Release
+Merge 0.1-devel into master
     
+Release
+
 **POINTS TO THINK ABOUT**
   
   Constraints
