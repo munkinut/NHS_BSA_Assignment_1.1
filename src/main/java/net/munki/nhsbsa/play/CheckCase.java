@@ -26,7 +26,7 @@ public @interface CheckCase {
 
     Class<? extends Payload>[] payload() default { };
 
-    CaseMode value();
+    CaseMode cmvalue();
 
     @Target({ FIELD, METHOD, PARAMETER, ANNOTATION_TYPE })
     @Retention(RUNTIME)

@@ -11,7 +11,7 @@ public class Car {
 
     @NotNull
     @Size(min = 2, max = 14)
-    @CheckCase(CaseMode.UPPER)
+    @CheckCase(cmvalue = CaseMode.UPPER)
     private String licensePlate;
 
     @Min(2)

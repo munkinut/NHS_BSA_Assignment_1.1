@@ -8,8 +8,8 @@ public class CheckCaseValidator implements ConstraintValidator<CheckCase, String
     private CaseMode caseMode;
 
     @Override
-    public void initialize(CheckCase constraintAnnotation) {
-        this.caseMode = constraintAnnotation.value();
+    public void initialize(CheckCase checkCase) {
+        this.caseMode = checkCase.cmvalue();
     }
 
     @Override
