@@ -4,6 +4,10 @@
 
 `mvn clean package`
 
+**ISSUES**
+
+ - One recorded in the Issues section of the repo.
+
 **KEY KNOWLEDGE**
 
  - JSR-303 annotations
