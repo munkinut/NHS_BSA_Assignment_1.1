@@ -6,7 +6,7 @@
 
 **ISSUES**
 
- - One recorded in the Issues section of the repo.
+ - One recorded in the Issues section of the repo
 
 **KEY KNOWLEDGE**
 
